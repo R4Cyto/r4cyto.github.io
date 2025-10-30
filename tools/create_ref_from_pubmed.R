@@ -38,7 +38,7 @@ create_ref_from_pubmed_id <- function(pubmed_id, output_dir = "_references") {
     article_title <- summ$title
 
     # b. Authors
-    # Format: "Last, Initials." e.g., "Smith, J. and Doe, A."
+    # Format: "Last Initials." e.g., "Smith J, Doe A"
     authors_df <- summ$authors
     author_string <- paste(authors_df$name, collapse= ", ")
 
