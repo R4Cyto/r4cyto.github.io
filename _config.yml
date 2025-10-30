@@ -1,0 +1,21 @@
+# Site settings
+title: R4Cyto
+description: R pour la cytométrie
+url: "https://r4cyto.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: minima  # or choose another theme
+
+# Collections
+collections:
+  references:
+    output: true
+    permalink: /references/:name/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

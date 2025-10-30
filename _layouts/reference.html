@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="reference-detail">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="reference-meta">
+      <p><strong>Authors:</strong> {{ page.author }}</p>
+      <p><strong>Year:</strong> {{ page.year }} | <strong>Source:</strong> {{ page.source }}</p>
+      <p><strong>DOI:</strong> <a href="{{ page.url }}" target="_blank">{{ page.url }}</a></p>
+      {% if page.editor_comment != "" %}
+      <div class="editor-comment">
+        <strong>Editor's Comment:</strong> {{ page.editor_comment }}
+      </div>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="reference-content">
+    {{ content }}
+  </div>
+
+  <footer>
+    <a href="/references.html">← Back to References</a>
+  </footer>
+</article>
