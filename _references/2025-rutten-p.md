@@ -6,7 +6,7 @@ author: Rutten P, Mocking TR, Cloos J, van Wieringen WN, Bachas C
 year: 2025
 author_key: rutten-p
 source: BMC Bioinformatics
-url: https://doi.org/10.1186/s12859-025-06285-z
+doi: https://doi.org/10.1186/s12859-025-06285-z
 last_modified: '2025-10-30'
 editor_comment: ''
 ---

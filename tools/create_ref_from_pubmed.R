@@ -105,7 +105,7 @@ create_ref_from_pubmed_id <- function(pubmed_id, output_dir = "_references") {
       year = as.integer(pub_year),
       author_key = first_author_key, # Editor must check and modify this if needed
       source = journal_name,
-      url = ifelse(doi_link != "", doi_link, external_url), # Prefer DOI link if found
+      doi = ifelse(doi_link != "", doi_link, external_url), # Prefer DOI link if found
       last_modified = format(Sys.Date(), "%Y-%m-%d"),
       editor_comment = ""
     )
@@ -123,7 +123,7 @@ create_ref_from_pubmed_id <- function(pubmed_id, output_dir = "_references") {
       "\n### Key Findings\n\n",
       "1.  **point 1:** Detail point 1.\n",
       "\n### Methodology\n\n",
-      "Description of the methods used...\n\n"
+      "Description of the methods used...\n"
     )
 
     # 7. Save the file

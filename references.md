@@ -41,7 +41,7 @@ title: References
   {% if ref.last_modified %}
   <p><strong>Last Modified:</strong> {{ ref.last_modified }}</p>
   {% endif %}
-  <p><strong>DOI:</strong> <a href="{{ ref.url }}" target="_blank">{{ ref.url }}</a></p>
+  <p><strong>DOI:</strong> <a href="{{ ref.doi }}" target="_blank">{{ ref.doi }}</a></p>
   {% if ref.editor_comment != "" %}
   <p><em>{{ ref.editor_comment }}</em></p>
   {% endif %}
