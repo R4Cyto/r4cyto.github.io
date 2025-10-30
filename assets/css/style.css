@@ -44,6 +44,19 @@ main {
   min-height: 60vh;
 }
 
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #e1e4e8;
+  text-align: center;
+  color: #666;
+}
+
+
+/*
+REFERENCES
+*/
+
 .reference {
   border-left: 3px solid #0366d6;
   padding-left: 1em;
@@ -91,10 +104,59 @@ main {
   color: #0366d6;
 }
 
-footer {
-  margin-top: 3em;
-  padding-top: 1em;
-  border-top: 1px solid #e1e4e8;
-  text-align: center;
+
+/*
+SEARCH and SORT box in REFERENCES
+*/
+
+.controls-container {
+  margin-bottom: 2em;
+}
+
+.search-container {
+  margin-bottom: 1em;
+}
+
+#search-box {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #e1e4e8;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+#search-box:focus {
+  outline: none;
+  border-color: #0366d6;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1em;
+}
+
+.sort-container label {
+  font-weight: 600;
+}
+
+#sort-select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 2px solid #e1e4e8;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+#sort-select:focus {
+  outline: none;
+  border-color: #0366d6;
+}
+
+#search-count {
   color: #666;
+  font-size: 14px;
 }

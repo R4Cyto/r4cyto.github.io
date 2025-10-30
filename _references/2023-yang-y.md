@@ -6,6 +6,7 @@ author_key: "yang-y"
 year: 2023
 source: "Genome Biol"
 url: "https://doi.org/10.1186/s13059-023-03099-1"
+last_modified: "2025-10-30"
 editor_comment: "**Cytomulate** is a novel simulation algorithm for **Cytometry by Time-of-Flight (CyTOF)** data. This article presents its development and validation. Cytomulate is positioned as a critical tool to advance CyTOF methodology by providing a reliable platform for benchmarking and validation."
 ---
 
