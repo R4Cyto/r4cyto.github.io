@@ -13,6 +13,8 @@ title: References
   <div class="sort-container">
     <label for="sort-select">Sort by:</label>
     <select id="sort-select">
+      <option value="pub-date-desc">Publication Date (Newest First)</option>
+      <option value="pub-date-asc">Publication Date (Oldest First)</option>
       <option value="year-desc">Year (Newest First)</option>
       <option value="year-asc">Year (Oldest First)</option>
       <option value="modified-desc">Last Modified (Newest First)</option>
@@ -34,10 +36,14 @@ title: References
      data-year="{{ ref.year }}" 
      data-source="{{ ref.source | downcase }}"
      data-modified="{{ ref.last_modified | default: '1970-01-01' }}"
-     data-author-sort="{{ ref.author_key | downcase }}">
+     data-author-sort="{{ ref.author_key | downcase }}"
+     data-pub-date="{{ ref.pub_date | default: '1970-01-01' }}">
   <h3><a href="{{ ref.url }}">{{ ref.title }}</a></h3>
   <p><strong>Authors:</strong> {{ ref.author }}</p>
   <p><strong>Year:</strong> {{ ref.year }} | <strong>Source:</strong> {{ ref.source }}</p>
+  {% if ref.pub_date %}
+  <p><strong>Publication Date:</strong> {{ ref.pub_date }}</p>
+  {% endif %}
   {% if ref.last_modified %}
   <p><strong>Last Modified:</strong> {{ ref.last_modified }}</p>
   {% endif %}
@@ -75,6 +81,20 @@ document.addEventListener('DOMContentLoaded', function() {
       let aVal, bVal;
       
       switch(sortValue) {
+        // --- NEW PUB DATE SORTING ---
+        case 'pub-date-desc':
+          aVal = new Date(a.getAttribute('data-pub-date'));
+          bVal = new Date(b.getAttribute('data-pub-date'));
+          // Subtracting Dates returns the difference in milliseconds: bVal - aVal sorts newest first (desc)
+          return bVal - aVal;
+        
+        case 'pub-date-asc':
+          aVal = new Date(a.getAttribute('data-pub-date'));
+          bVal = new Date(b.getAttribute('data-pub-date'));
+          // aVal - bVal sorts oldest first (asc)
+          return aVal - bVal;
+        // -----------------------------
+        
         case 'year-desc':
           aVal = parseInt(a.getAttribute('data-year'));
           bVal = parseInt(b.getAttribute('data-year'));
@@ -124,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const source = ref.getAttribute('data-source');
 
       const matches = title.includes(searchTerm) || 
-                     author.includes(searchTerm) || 
-                     year.includes(searchTerm) || 
-                     source.includes(searchTerm);
+                      author.includes(searchTerm) || 
+                      year.includes(searchTerm) || 
+                      source.includes(searchTerm);
 
       ref.style.display = matches ? '' : 'none';
     });
@@ -138,5 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   searchBox.addEventListener('input', filterReferences);
   sortSelect.addEventListener('change', sortReferences);
+  
+  // Initial sort to apply the default 'pub-date-desc' or 'year-desc' if you change the default option
+  sortReferences(); 
 });
 </script>

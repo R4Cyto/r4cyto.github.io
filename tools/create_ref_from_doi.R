@@ -55,7 +55,12 @@ create_ref_from_doi <- function(doi, output_dir = "_references") {
     author_string <- paste(author_names, collapse= ", ")
 
     # c. Year (Use 'issued' date)
-    pub_year <- data$issued$`date-parts`[[1]][1]
+    date_parts <- data$issued$`date-parts`[1,]
+    pub_date <- sprintf(
+      "%04d-%02d-%02d", date_parts[1], date_parts[2], date_parts[3])
+
+    # If you only need the year for the YAML front matter and file name, use pub_year:
+    # pub_year is already set above as date_parts[1]
 
     # d. Source/Journal (The container-title is usually the journal/preprint server)
     # bioRxiv preprints use "bioRxiv" as the container-title
@@ -111,6 +116,7 @@ create_ref_from_doi <- function(doi, output_dir = "_references") {
       layout = "reference",
       title = article_title,
       author = author_string,
+      pub_date = pub_date,
       year = as.integer(pub_year),
       author_key = first_author_key,
       source = journal_name,

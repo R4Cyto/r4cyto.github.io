@@ -3,6 +3,7 @@ layout: reference
 title: "Cytomulate: accurate and efficient simulation of CyTOF data"
 author: "Yang Y, Wang K, Lu Z, Wang T, Wang X"
 author_key: "yang-y"
+pub_date: '2023-11-16'
 year: 2023
 source: "Genome Biol"
 doi: "https://doi.org/10.1186/s13059-023-03099-1"

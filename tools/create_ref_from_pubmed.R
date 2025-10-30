@@ -44,6 +44,7 @@ create_ref_from_pubmed_id <- function(pubmed_id, output_dir = "_references") {
 
     # c. Year
     pub_year <- str_extract(summ$pubdate, "\\d{4}")
+    pub_date <- format(as.Date(summ$sortpubdate), "%Y-%m-%d")
 
     # d. Source/Journal
     journal_name <- summ$source
@@ -102,6 +103,7 @@ create_ref_from_pubmed_id <- function(pubmed_id, output_dir = "_references") {
       layout = "reference",
       title = article_title,
       author = author_string,
+      pub_date = pub_date,
       year = as.integer(pub_year),
       author_key = first_author_key, # Editor must check and modify this if needed
       source = journal_name,

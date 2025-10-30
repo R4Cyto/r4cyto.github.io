@@ -4,6 +4,7 @@ title: 'CytoScan: Automated detection of technical anomalies for cytometry quali
   control'
 author: Mocking TR, Zwolle F, Park Y, Kelder A, Saeys Y, Cloos J, van Gassen S, Bachas
   C
+pub_date: '2025-09-26'
 year: 2025
 author_key: mocking-tr
 source: bioRxiv
@@ -14,7 +15,7 @@ editor_comment: 'This bioRxiv preprint introduces a new computational tool to st
 
 ## Additional Notes
 
-### Article Summary
+### 📰 Article Summary
 
 1.  The paper presents **CytoScan**, a novel R package designed to automate the detection of technical anomalies and ensure quality control in large, multi-parameter cytometry datasets.
 2.  It addresses the challenge of spurious technical effects, which arise from standardization issues and complicate downstream analysis of cellular phenotypes.
@@ -22,7 +23,7 @@ editor_comment: 'This bioRxiv preprint introduces a new computational tool to st
 4.  The tool was validated using both controlled simulations of marker distribution skewing and observations of real-life technical effects, demonstrating high accuracy in detection.
 5.  By providing informative visualizations and operating efficiently on consumer-grade hardware, CytoScan offers a highly accessible and reliable solution for quality-control in cytometry pipelines.
 
-### Key Findings
+###  🎯 Key Findings
 
 1.  **Need for Automation:** Complex, multi-parameter cytometry studies urgently require **user-friendly, automated tools** to detect technical variations that skew marker distributions.
 2.  **CytoScan Development:** The researchers developed and present the **CytoScan R package** to fill the gap in exploratory data analysis tools for post-acquisition quality control.

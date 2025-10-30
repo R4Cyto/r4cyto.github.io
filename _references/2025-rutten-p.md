@@ -3,6 +3,7 @@ layout: reference
 title: Computationally efficient multi-sample flow cytometry data analysis using Gaussian
   mixture models.
 author: Rutten P, Mocking TR, Cloos J, van Wieringen WN, Bachas C
+pub_date: '2025-10-23'
 year: 2025
 author_key: rutten-p
 source: BMC Bioinformatics
