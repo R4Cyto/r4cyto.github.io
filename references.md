@@ -1,7 +1,11 @@
 ---
 layout: default
 title: References
+permalink: /references/
 ---
+
+<link rel="stylesheet" href="{{ '/assets/css/references-search.css' | relative_url }}">
+
 
 # References
 
@@ -33,28 +37,40 @@ title: References
 <div class="reference" 
      data-title="{{ ref.title | downcase }}" 
      data-author="{{ ref.author | downcase }}" 
-     data-year="{{ ref.year }}" 
+     data-year="{{ ref.year }}"
+     data-keywords="{{ ref.keywords | join: ' ' | downcase }}"
      data-source="{{ ref.source | downcase }}"
      data-modified="{{ ref.last_modified | default: '1970-01-01' }}"
      data-author-sort="{{ ref.author_key | downcase }}"
      data-pub-date="{{ ref.pub_date | default: '1970-01-01' }}">
   <h3><a href="{{ ref.url }}">{{ ref.title }}</a></h3>
-  <p><strong>Authors:</strong> {{ ref.author }}</p>
-  <p><strong>Year:</strong> {{ ref.year }} | <strong>Source:</strong> {{ ref.source }}</p>
+  <p>{{ ref.author }}</p>
+  <p>{{ ref.year }} | {{ ref.source }} | <a href="{{ ref.doi }}" target="_blank">{{ ref.doi }}</a></p>
+  <p>
   {% if ref.pub_date %}
-  <p><strong>Publication Date:</strong> {{ ref.pub_date }}</p>
+    <strong>Publication Date:</strong> {{ ref.pub_date }}
   {% endif %}
   {% if ref.last_modified %}
-  <p><strong>Last Modified:</strong> {{ ref.last_modified }}</p>
+    <strong>Last Modified:</strong> {{ ref.last_modified }}
   {% endif %}
-  <p><strong>DOI:</strong> <a href="{{ ref.doi }}" target="_blank">{{ ref.doi }}</a></p>
+  </p>
   {% if ref.editor_comment != "" %}
   <p><em>{{ ref.editor_comment }}</em></p>
   {% endif %}
-  <p><a href="{{ ref.url }}">View detailed notes →</a></p>
+  {% if ref.keywords %}
+  <p class="keywords">
+    {% for keyword in ref.keywords %}
+      <span class="keyword-tag">{{ keyword }}</span>
+    {% endfor %}
+  </p>
+  {% endif %}
 </div>
 {% endfor %}
 </div>
+
+<!-->
+<script src="{{ '/assets/js/references-search.js' | relative_url }}"></script>
+<!-->
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -142,10 +158,12 @@ document.addEventListener('DOMContentLoaded', function() {
       const author = ref.getAttribute('data-author');
       const year = ref.getAttribute('data-year');
       const source = ref.getAttribute('data-source');
+      const keywords = ref.getAttribute('data-keywords');
 
       const matches = title.includes(searchTerm) || 
                       author.includes(searchTerm) || 
                       year.includes(searchTerm) || 
+                      keywords.includes(searchTerm) || 
                       source.includes(searchTerm);
 
       ref.style.display = matches ? '' : 'none';

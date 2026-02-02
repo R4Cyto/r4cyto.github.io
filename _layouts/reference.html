@@ -14,6 +14,9 @@ layout: default
         <strong>Editor's Comment:</strong> {{ page.editor_comment }}
       </div>
       {% endif %}
+      {% for keyword in page.keywords %}
+        - {{ keyword }}
+      {% endfor %}
     </div>
   </header>
 
@@ -22,6 +25,6 @@ layout: default
   </div>
 
   <footer>
-    <a href="/references.html">← Back to References</a>
+    <a href="/references/">← Back to References</a>
   </footer>
 </article>

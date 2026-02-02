@@ -13,4 +13,4 @@ Your organization description here.
 
 ## Quick Links
 
-- [References](/references.html)
+- [References](/references/)
