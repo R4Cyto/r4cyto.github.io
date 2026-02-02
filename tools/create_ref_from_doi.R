@@ -61,6 +61,7 @@ create_ref_from_doi <- function(doi, output_dir = "_references") {
 
     # If you only need the year for the YAML front matter and file name, use pub_year:
     # pub_year is already set above as date_parts[1]
+    pub_year <- date_parts[1]
 
     # d. Source/Journal (The container-title is usually the journal/preprint server)
     # bioRxiv preprints use "bioRxiv" as the container-title
