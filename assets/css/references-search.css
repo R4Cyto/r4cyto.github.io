@@ -1,0 +1,121 @@
+/* References Page Search and Display Styles */
+
+.search-container {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+#searchStats {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.reference-item {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.reference-item.hidden {
+  display: none;
+}
+
+.reference-item.highlight {
+  border-color: #4CAF50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.reference-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.reference-item h3 a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.reference-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.authors {
+  color: #555;
+  margin: 5px 0;
+}
+
+.journal {
+  color: #666;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.keywords {
+  margin: 10px 0;
+}
+
+.keyword-tag {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 10px;
+  margin: 2px 4px 2px 0;
+  border-radius: 3px;
+  font-size: 13px;
+  border: 1px solid #bbdefb;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.keyword-tag:hover {
+  background-color: #bbdefb;
+  transform: translateY(-1px);
+}
+
+.summary {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+mark {
+  background-color: #ffeb3b;
+  padding: 2px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .search-container {
+    padding: 15px;
+  }
+  
+  .reference-item {
+    padding: 15px;
+  }
+  
+  #searchInput {
+    font-size: 14px;
+  }
+}
