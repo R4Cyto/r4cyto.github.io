@@ -10,6 +10,9 @@ source: Bioinformatics
 doi: https://doi.org/10.1093/bioinformatics/btw191
 last_modified: '2025-12-18'
 editor_comment: ''
+keywords:
+  - FCS cleaning
+  - quality control
 ---
 
 ## Additional Notes

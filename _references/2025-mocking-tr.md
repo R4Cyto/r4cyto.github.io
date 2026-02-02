@@ -11,6 +11,9 @@ source: bioRxiv
 doi: https://doi.org/10.1101/2025.09.24.678276
 last_modified: '2025-10-30'
 editor_comment: 'This bioRxiv preprint introduces a new computational tool to standardize and improve quality control in flow and mass cytometry experiments.'
+keywords:
+  - FCS cleaning
+  - quality control
 ---
 
 ## Additional Notes
