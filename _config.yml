@@ -19,3 +19,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - .jekyll-cache/
+  - .bundle/
+  - .Rproj.user/
+  - vendor/
