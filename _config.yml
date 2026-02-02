@@ -19,6 +19,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - r4cyto.github.io.Rproj
   - .jekyll-cache/
   - .bundle/
   - .Rproj.user/
